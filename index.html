@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
+    <!-- End Google fonts-->
+    <link rel="stylesheet" href="style.css">
+    <title>Library App</title>
+</head>
+
+<header >
+    <h1> Welcome to your library!</h1>
+    
+</header>
+<body>
+    <!-- Command center -->
+    <div class="commands"> 
+        <button id = "add" class = "add" onclick="formShow()"> Add a book </button>
+        <button class = "edit" onclick="showLibrary()">Show library</button>
+        <button  onclick="clearLibrary()">Clear a book</button>
+    </div>
+
+        <!-- Form -->
+    <form id="form" class="hidden">
+        <label> Title</label>
+        <input id="title" type="text" placeholder="Book title">
+        <label> Author</label>
+        <input id="author" type="text" placeholder="Book ">
+        <label> Pages</label>
+        <input id="pages" type="number" placeholder="Book pages">
+        <label> Have you read it?</label>
+        <input id="haveRead" type="checkbox" default="false">
+        
+        <input type="submit" value="Add book" >  </input>
+    </form>
+
+        <!-- Library -->
+    <div class="Library" id="id">
+    
+    </div>
+   
+    
+    <script src="script.js"></script>
+</body>
+</html>
