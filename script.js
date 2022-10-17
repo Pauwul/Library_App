@@ -79,7 +79,11 @@ function showLibrary() {
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(haveRead);
+    // append x button
+    let delBtn = document.createAttribute("p");
+    delBtn.addEventListener("click", removeBook(title));
 
+    card.appendChild(delBtn);
     console.log(myLibrary);
     libraryDiv.appendChild(card);
   }
@@ -99,4 +103,9 @@ function formShow() {
     addBtn.textContent = "Add a book";
   }
 }
+
+const removeBook = (title) => {
+  myLibrary.filter((book) => (book.title = title));
+};
+
 // button
