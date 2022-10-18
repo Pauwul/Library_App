@@ -54,6 +54,9 @@ button{
     color: blueviolet;
     font-weight: 700;
 }
+.flexy{
+    
+}
 .commands {
     display: flex;
     justify-content: center;

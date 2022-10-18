@@ -20,6 +20,7 @@ let addBtn = document.getElementById("add");
 // libraryDiv.appendChild(LibraryDiv);
 
 function Book() {
+  this.id = 0;
   this.title = "No titile";
   this.author = "No author";
   this.pages = 0;
@@ -27,6 +28,7 @@ function Book() {
 }
 
 function Book(title, author, pages, haveRead) {
+  this.id = Math.floor(Math.random() * 900000);
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -80,11 +82,17 @@ function showLibrary() {
     card.appendChild(pages);
     card.appendChild(haveRead);
     // append x button
-    let delBtn = document.createAttribute("p");
-    delBtn.addEventListener("click", removeBook(title));
+    let delBtn = document.createElement("button");
+
+    delBtn.textContent = "Delete me";
+    // add event liustenr for delete
+    delBtn.addEventListener("click", (event) => {
+      card.remove();
+      myLibrary.filter((el) => el.id !== book.id);
+    });
 
     card.appendChild(delBtn);
-    console.log(myLibrary);
+
     libraryDiv.appendChild(card);
   }
 }
@@ -103,9 +111,5 @@ function formShow() {
     addBtn.textContent = "Add a book";
   }
 }
-
-const removeBook = (title) => {
-  myLibrary.filter((book) => (book.title = title));
-};
 
 // button
